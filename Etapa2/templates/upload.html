@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1 {
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: right;
+}
+
+form {
+    text-align: center;
+}
+
+.columns {
+            display: flex;
+            overflow: auto;
+        }
+
+.column {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid #0F1A20;
+    border-radius: 10px;
+    overflow: auto;
+    color: #0F1A20;
+    font-family: 'Times New Roman', serif;
+    background-color: #9DA9A0;
+}
+
+
+pre {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            
+        }
+
+.rounded-box {
+            width:500px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            border: 5px solid #0F1A20;
+            border-radius: 10px;
+            overflow: auto; /* Create a scrollable area for content overflow */
+            padding: 10px; /* Add some padding to the content area */
+            background-color: #CEC075;
+            
+}
+
+html {
+    background-color: #C0CAAD;
+}
+
+</style>
+</head>
+<body>
+    
+    <title>Document Processor</title>
+</head>
+<body>
+    <h1>Predicción de Etiquetas de Documentos</h1>
+    <form method="POST" action="/process" enctype="multipart/form-data">
+        <input type="file" name="document">
+        <input type="submit" value="Predecir">
+    </form>
+
+    <div class="columns">
+      <div class="column">
+        
+          <h2>OBS 3</h2>
+          <p>El Objetivo de Desarrollo Sostenible (ODS) número 3 se enfoca en promover una vida sana y bienestar para todas las edades. Este objetivo ha adquirido mayor importancia debido a la pandemia de COVID-19, la cual ha tenido un impacto significativo a nivel mundial y particularmente en Colombia, donde el sistema de salud enfrenta deficiencias que afectan a las poblaciones más vulnerables. Por lo tanto, es crucial implementar iniciativas destinadas a cumplir con este objetivo en Colombia para mejorar la calidad de vida de sus habitantes. Es esencial realizar un seguimiento continuo de estas iniciativas mediante evaluaciones para determinar su impacto positivo en la población</p>
+      </div>
+      <div class="column">
+        
+        <h2>OBS 4</h2>
+          <p>El Objetivo de Desarrollo Sostenible (ODS) número 4 se centra en asegurar una educación inclusiva, equitativa y de calidad, así como fomentar oportunidades de aprendizaje durante toda la vida para todos. La educación es crucial para superar la pobreza, ya que proporciona a las personas mayores oportunidades laborales y, en consecuencia, una mejor calidad de vida. En el caso de Colombia, este objetivo es de particular importancia, ya que el país ha enfrentado desafíos persistentes en el ámbito educativo, reflejados en bajos resultados en los rankings internacionales. Aunque el gobierno nacional ha trabajado en mejorar la situación, aún queda mucho por hacer para garantizar una educación de calidad para todos. Por lo tanto, es esencial que la ONU, a través del UNFPA, implemente programas para mejorar la educación en el país y que se realice un seguimiento continuo y control de estos programas para asegurar su efectividad.</p>
+      </div>
+      <div class="column">
+        
+          <h2>OBS 5</h2>
+          <p>El Objetivo de Desarrollo Sostenible (ODS) número 5 se enfoca en lograr la igualdad de género y empoderar a todas las mujeres y niñas. Este objetivo es fundamental debido a la larga historia de privilegios masculinos que han perpetuado la desigualdad de género. Garantizar la igualdad de género es crucial para fomentar el desarrollo de una sociedad pacífica y próspera. Aunque Colombia ha logrado avances significativos en este aspecto, todavía existen brechas que deben cerrarse para asegurar condiciones equitativas para hombres y mujeres. Es esencial crear espacios e iniciativas de apoyo para las mujeres en Colombia y realizar un seguimiento continuo de esta población y los progresos hacia el objetivo de igualdad de género</p>
+      </div>
+     </div>
+
+    {% if result %}
+    <h2>Resultado Procesado:</h2>
+    <pre>
+      <div class="rounded-box">
+    
+      {{ result }}
+    
+     
+      </div>
+    </pre>
+    {% endif %}
+</body>
+</html>
